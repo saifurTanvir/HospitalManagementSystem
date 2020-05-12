@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Doctor;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer(['SuperAdminLayouts.*'], function($view){
+
+            $view->with('departments', Doctor::select('Department')->distinct()->orderBy('Department')->get());
+        });
     }
 }

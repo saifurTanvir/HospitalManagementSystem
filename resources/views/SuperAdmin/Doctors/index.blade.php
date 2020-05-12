@@ -23,7 +23,7 @@
                     <td>{{$doctor->Email}}</td>
                     <td>{{$doctor->Department}}</td>
                     <td style="text-align: center;">
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="{{route('superAdmin.doctor.edit', $doctor->DoctorId)}}" class="btn btn-primary">Edit</a>
                         <a href="#" class="btn btn-primary">Block</a>
                     </td>
 

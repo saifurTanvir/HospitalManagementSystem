@@ -3,6 +3,9 @@
 @section('content')
     <div class="row">
         <div class="col-sm-8">
+            <div class="alert alert-success" role="alert">
+                {{session('editSuccess')}}
+            </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Dr.{{$doctor->Name}}'s, Profile Information</h6>
@@ -94,14 +97,14 @@
                         <tr>
                             <td>Visiting Fee</td>
                             <td>
-                                {{$doctor->VisitingFee}}
+                                {{$doctor->VisitingFee}} Taka
                             </td>
                         </tr>
 
                         <tr>
                             <td>Comission (%)</td>
                             <td>
-                                {{$doctor->Commission}}
+                                {{$doctor->Commission}} %
                             </td>
                         </tr>
 
@@ -110,69 +113,16 @@
                             <td> {{$doctor->ClosingDay}} </td>
                         </tr>
 
-                        <tr>
-                            <td>InTotal Comission</td>
-                            <td><text>250000</text></td>
-                        </tr>
 
-                        <tr>
-                            <td>Total Patient Checked</td>
-                            <td><text>2500</text></td>
-                        </tr>
-                        <!-- <tr>
-                          <td colspan="2">
-                            <center>
-                              <input type="submit" class="btn btn-warning" value="Edit Profile">
-                            </center>
-                          </td>
-                        </tr> -->
 
                     </table>
 
                     <div class="container bg card">
-                        <center style="color:green;">
-                            Monthly Information
+                        <center>
+                            <a class="btn btn-dark" href="{{route('superAdmin.doctor.edit', $doctor->DoctorId)}}">
+                                Edit Doctor
+                            </a>
                         </center>
-                        <table width="100%" class="table table-hover">
-                            <tr>
-                                <td>Select Month</td>
-                                <td>
-                                    <input type="date" class="form-control" name="date">
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-info" value="Go">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Patient Checked</td>
-                                <td>
-                                    <text name="monthPathientChecked">25</text>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Tests Referred</td>
-                                <td>
-                                    <text name="monthPathientChecked">93</text>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Comissions</td>
-                                <td>
-                                    <text name="monthPathientChecked">25365</text>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <center>
-                                        <a href="" class="btn btn-dark">Edit Doctor</a>
-                                    </center>
-                                </td>
-                            </tr>
-
-                        </table>
                     </div>
                 </div>
             </div>

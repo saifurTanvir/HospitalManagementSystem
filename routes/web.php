@@ -22,3 +22,6 @@ Route::get('/superAdmin/doctors/departments/{department}', 'DoctorController@ind
     ->name('superAdmin.doctor.index');
 Route::get('superAdmin/doctors/doctor/{doctor}', 'DoctorController@show')
     ->name('superAdmin.doctor.show');
+Route::get('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@edit')
+    ->name('superAdmin.doctor.edit');
+Route::patch('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@update');

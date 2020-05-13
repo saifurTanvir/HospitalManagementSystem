@@ -36,4 +36,10 @@ Route::get('/superAdmin/patients/age/{min}/{max}', 'PatientController@age')
     ->name('superAdmin.patients.age');
 Route::get('superAdmin/patients/patient/{patient}', 'PatientController@show')
     ->name('superAdmin.patient.show');
-
+Route::get('/superAdmin/patient/accounts/{patientId}', 'PatientAccountsController@index')
+    ->name('superAdmin.patient.accounts.index');
+Route::get('/superAdmin/patient/accounts/show/{invoiceNo}', 'PatientAccountsController@show')
+    ->name('superAdmin.patient.accounts.show');
+Route::get('/superAdmin/patient/accounts/discount/{discount}', 'PatientAccountsController@edit')
+    ->name('superAdmin.patient.accounts.edit');
+Route::patch('/superAdmin/patient/accounts/discount/{invoiceNo}', 'PatientAccountsController@update');

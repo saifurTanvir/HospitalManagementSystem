@@ -22,7 +22,9 @@ class PatientController extends Controller
         return view('SuperAdmin.Patients.index', compact('patients'));
     }
 
-    public function show(PatientlistMaster $patient){
+    public function show($patient){
+        $patient = PatientlistMaster::where('patientId', $patient)->get();
+        //dd($patient[0]->name);
         return view('SuperAdmin.Patients.show', compact('patient'));
     }
 }

@@ -72,6 +72,40 @@
         </div>
       </li>
 
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Patient</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Type</h6>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.type', 'Indoor')}}">Indoor</a>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.type', 'Outdoor')}}">Outdoor</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gander</h6>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.gender', 'Male')}}">Male</a>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.gender', 'Female')}}">Female</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Age</h6>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.age', ['0','10'])}}">Baby</a>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.age', ['11','19'])}}">Teenage</a>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.age', ['20','45'])}}">Young</a>
+                    <a class="collapse-item" href="{{route('superAdmin.patients.age', ['46','120'])}}">Old</a>
+                    <div class="collapse-divider"></div>
+
+
+                </div>
+            </div>
+        </li>
+
 
 
 

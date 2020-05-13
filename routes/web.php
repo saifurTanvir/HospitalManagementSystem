@@ -25,3 +25,13 @@ Route::get('superAdmin/doctors/doctor/{doctor}', 'DoctorController@show')
 Route::get('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@edit')
     ->name('superAdmin.doctor.edit');
 Route::patch('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@update');
+
+Route::get('/superAdmin/patients/type/{type}', 'PatientController@type')
+    ->name('superAdmin.patients.type');
+
+Route::get('/superAdmin/patients/gender/{gender}', 'PatientController@gender')
+    ->name('superAdmin.patients.gender');
+
+Route::get('/superAdmin/patients/age/{min}/{max}', 'PatientController@age')
+    ->name('superAdmin.patients.age');
+

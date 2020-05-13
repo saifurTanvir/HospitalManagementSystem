@@ -34,4 +34,6 @@ Route::get('/superAdmin/patients/gender/{gender}', 'PatientController@gender')
 
 Route::get('/superAdmin/patients/age/{min}/{max}', 'PatientController@age')
     ->name('superAdmin.patients.age');
+Route::get('superAdmin/patients/patient/{patient}', 'PatientController@show')
+    ->name('superAdmin.patient.show');
 

@@ -7,10 +7,8 @@
         <tr>
             <th>Name </th>
             <th>Contact</th>
-            <th>Gender</th>
-            <th>Age</th>
             <th>Type</th>
-            <th>Register</th>
+            <th>Register Date</th>
 
             <th style="text-align: center;">Action</th>
         </tr>
@@ -21,15 +19,14 @@
             @foreach ($patients as $patient)
                 <tr>
 
-                    <td><a href="">{{$patient->name}}</a></td>
+                    <td><a href="{{route('superAdmin.patient.show', $patient->id)}}">{{$patient->name}}</a></td>
                     <td>{{$patient->contact}}</td>
-                    <td>{{$patient->gender}}</td>
-                    <td>{{$patient->age}}</td>
                     <td>{{$patient->type}}</td>
                     <td>{{$patient->registerDate}}</td>
                     <td style="text-align: center;">
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-primary">Block</a>
+                        <a href="" class="btn btn-primary">Accounts</a>
+                        <a href="#" class="btn btn-primary">Medical History</a>
+                        <a href="#" class="btn btn-primary">Tests</a>
                     </td>
 
                 </tr>

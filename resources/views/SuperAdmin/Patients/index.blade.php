@@ -23,7 +23,7 @@
                     <td>{{$patient->registerDate}}</td>
                     <td style="text-align: center;">
                         <a href="{{route('superAdmin.patient.accounts.index', $patient->patientId)}}" class="btn btn-primary">Accounts</a>
-                        <a href="#" class="btn btn-primary">Medical History</a>
+                        <a href="{{route('superAdmin.medicalHistory.patient', $patient->patientId)}}" class="btn btn-primary">Medical History</a>
                         <a href="#" class="btn btn-primary">Tests</a>
                     </td>
 

@@ -10,4 +10,8 @@ class Doctor extends Model
 
     public $timestamps = false;
     protected $primaryKey = "DoctorId";
+
+    public function patientAppoints(){
+        return $this->hasMany(PatientAppointment::class);
+    }
 }

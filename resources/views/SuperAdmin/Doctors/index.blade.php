@@ -3,6 +3,8 @@
 @section('content')
 
     <table class="table table-striped">
+        <h1>Total Doctors <span class="badge badge-info">{{count($doctors)}}</span></h1>
+
         <thead>
         <tr>
             <th>Doctor Name</th>

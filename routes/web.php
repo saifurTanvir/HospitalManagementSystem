@@ -46,3 +46,5 @@ Route::patch('/superAdmin/patient/accounts/discount/{invoiceNo}', 'PatientAccoun
 
 Route::get('/superAdmin/patients/medicalHistory/patient/{patientId}', 'PatientMedicalHistoryController@index')
     ->name('superAdmin.medicalHistory.patient');
+Route::get('/superAdmin/patient/tests/{patientId}', 'PatientTestController@index')
+    ->name('superAdmin.patient.tests');

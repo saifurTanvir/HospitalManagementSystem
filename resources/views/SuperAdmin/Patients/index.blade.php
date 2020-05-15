@@ -3,6 +3,7 @@
 @section('content')
 
     <table class="table table-striped">
+        <h1>Total Patients <span class="badge badge-info">{{count($patients)}}</span></h1>
         <thead>
         <tr>
             <th>Name </th>
@@ -24,7 +25,7 @@
                     <td style="text-align: center;">
                         <a href="{{route('superAdmin.patient.accounts.index', $patient->patientId)}}" class="btn btn-primary">Accounts</a>
                         <a href="{{route('superAdmin.medicalHistory.patient', $patient->patientId)}}" class="btn btn-primary">Medical History</a>
-                        <a href="#" class="btn btn-primary">Tests</a>
+                        <a href="{{route('superAdmin.patient.tests', $patient->patientId)}}" class="btn btn-primary">Tests</a>
                     </td>
 
                 </tr>

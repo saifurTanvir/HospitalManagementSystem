@@ -128,7 +128,7 @@
             <h6 class="collapse-header">Employee</h6>
 
             @foreach ($employees as $employee)
-                <a class="dropdown-item" href="">{{$employee->designation}}</a>
+                <a class="dropdown-item" href="{{route('superAdmin.employees.department', $employee->designation)}}">{{$employee->designation}}</a>
             @endforeach
 
           </div>

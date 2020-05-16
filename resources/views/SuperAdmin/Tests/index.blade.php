@@ -10,7 +10,7 @@
         <thead>
         <tr>
             <th>Test Name </th>
-            <th>Neak Name</th>
+            <th>Nickname</th>
             <th>Initiate Date</th>
             <th>Cost</th>
 

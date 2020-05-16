@@ -65,3 +65,14 @@ Route::patch('/superAdmin/hospitalTests/test/edit/{testId}', 'HospitalTestContro
 Route::get('/superAdmin/hospitalTests/test/delete/{testId}', 'HospitalTestController@delete')
     ->name('superAdmin.hospitalTests.delete');
 Route::delete('/superAdmin/hospitalTests/test/delete/{testId}', 'HospitalTestController@destroy');
+
+Route::get('/superAdmin/employees/departments/department/{department}', 'EmployeeController@index')
+    ->name('superAdmin.employees.department');
+Route::get('/superAdmin/employees/employee/{employeeId}', 'EmployeeController@show')
+    ->name('superAdmin.employee.show');
+Route::get('/superAdmin/employee/edit/{employeeId}', 'EmployeeController@edit')
+    ->name('superAdmin.employee.edit');
+Route::patch('/superAdmin/employee/edit/{employeeId}', 'EmployeeController@update');
+Route::get('/superAdmin/employee/delete/{testId}', 'EmployeeController@delete')
+    ->name('superAdmin.employee.delete');
+Route::delete('/superAdmin/employee/delete/{testId}', 'EmployeeController@destroy');

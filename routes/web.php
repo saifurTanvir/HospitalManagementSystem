@@ -76,3 +76,6 @@ Route::patch('/superAdmin/employee/edit/{employeeId}', 'EmployeeController@updat
 Route::get('/superAdmin/employee/delete/{testId}', 'EmployeeController@delete')
     ->name('superAdmin.employee.delete');
 Route::delete('/superAdmin/employee/delete/{testId}', 'EmployeeController@destroy');
+
+Route::get('/superAdmin/reporting/allEmployee', 'AllEmployeeNumberReportingController@index')
+    ->name('superAdmin.reporting/allEmployeeNumber');

@@ -28,8 +28,8 @@ class AllEmployeeNumberReportingController extends Controller
         $patients = PatientlistMaster::all()->count();
         $male = PatientlistMaster::where('gender', 'Male')->count();
         $female = PatientlistMaster::where('gender', 'Female')->count();
-        $indoor = PatientlistMaster::where('gender', 'Indoor')->count();
-        $outdoor = PatientlistMaster::where('gender', 'Outdoor')->count();
+        $indoor = PatientlistMaster::where('type', 'Indoor')->count();
+        $outdoor = PatientlistMaster::where('type', 'Outdoor')->count();
 
         $tests = HospitalTest::all()->count();
 

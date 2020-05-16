@@ -20,7 +20,7 @@
                 </th>
                 <td>{{$test->testName}}</td>
 
-                <td>{{$test->testCode}}</td>
+                <td>{{$test->testCost}}</td>
             </tr>
         @endforeach
         <tr><td>{{ $tests->links() }}</td></tr>

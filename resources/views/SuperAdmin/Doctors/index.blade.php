@@ -13,7 +13,6 @@
             <th style="text-align: center;">Action</th>
         </tr>
         </thead>
-               "Doctors: " {{$doctors->count()}}
 
             <tbody>
             @foreach ($doctors as $doctor)

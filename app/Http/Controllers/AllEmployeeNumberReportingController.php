@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Employee;
 use App\Doctor;
 use App\PatientlistMaster;
+use App\HospitalTest;
 use App\Http\Controllers\SplQueue;
 
 class AllEmployeeNumberReportingController extends Controller
@@ -30,11 +31,13 @@ class AllEmployeeNumberReportingController extends Controller
         $indoor = PatientlistMaster::where('gender', 'Indoor')->count();
         $outdoor = PatientlistMaster::where('gender', 'Outdoor')->count();
 
+        $tests = HospitalTest::all()->count();
+
         $employeeList = [$employees, $manager, $hr, $reciptionist];
         $doctorList = [$doctors, $heart, $neourology, $cardiology, $dental];
         $patientList = [$patients, $male, $female, $indoor, $outdoor];
 
-        return view('SuperAdmin.Reportings.index', compact('employeeList', 'doctorList', 'patientList'));
+        return view('SuperAdmin.Reportings.index', compact('employeeList', 'doctorList', 'patientList', 'tests'));
         
 
     }

@@ -56,3 +56,9 @@ Route::get('/superAdmin/patients/medicalHistory/patient/{patientId}', 'PatientMe
     ->name('superAdmin.medicalHistory.patient');
 Route::get('/superAdmin/patient/tests/{patientId}', 'PatientTestController@index')
     ->name('superAdmin.patient.tests'); 
+
+Route::get('/superAdmin/hospitalTests', 'HospitalTestController@index')
+    ->name('superAdmin.HospitalTests');
+Route::get('/superAdmin/hospitalTests/test/{testId}', 'HospitalTestController@edit')
+    ->name('superAdmin.hospitalTest.edit');
+Route::patch('/superAdmin/hospitalTests/test/{testId}', 'HospitalTestController@update');

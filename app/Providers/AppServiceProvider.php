@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Doctor;
+use App\Employee;
 use App\PatientlistMaster;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer(['SuperAdminLayouts.*'], function($view){
 
             $view->with('departments', Doctor::select('Department')->distinct()->orderBy('Department')->get());
+            $view->with('employees', Employee::select('designation')->distinct()->orderBy('designation')->get());
 
         });
     }

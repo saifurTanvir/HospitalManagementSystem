@@ -25,6 +25,14 @@ Route::get('superAdmin/doctors/doctor/{doctor}', 'DoctorController@show')
 Route::get('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@edit')
     ->name('superAdmin.doctor.edit');
 Route::patch('/superAdmin/Doctors/{doctor}/edit', 'DoctorController@update');
+Route::get('/superAdmin/doctor/workingHours/{doctorId}', 'DoctorController@workingHours')
+    ->name('superAdmin.doctor.workingHours');
+Route::get('/superAdmin/doctor/workingHours/edit/{doctorId}/{timeId}', 'DoctorController@editWorkingHours')
+    ->name('superAdmin.doctor.editWorkingHours');
+Route::patch('/superAdmin/doctor/workingHours/edit/{doctorId}/{timeId}', 'DoctorController@updateWorkingHours');
+Route::get('/superAdmin/doctor/eorkingHours/delete/{doctorId}/{timeId}', 'DoctorController@deleteWorkingHours')
+    ->name('superAdmin.doctor.workingHours.delete');
+Route::delete('/superAdmin/doctor/eorkingHours/delete/{doctorId}/{timeId}', 'DoctorController@destroyWorkingHours');
 
 Route::get('/superAdmin/patients/type/{type}', 'PatientController@type')
     ->name('superAdmin.patients.type');
@@ -47,4 +55,4 @@ Route::patch('/superAdmin/patient/accounts/discount/{invoiceNo}', 'PatientAccoun
 Route::get('/superAdmin/patients/medicalHistory/patient/{patientId}', 'PatientMedicalHistoryController@index')
     ->name('superAdmin.medicalHistory.patient');
 Route::get('/superAdmin/patient/tests/{patientId}', 'PatientTestController@index')
-    ->name('superAdmin.patient.tests');
+    ->name('superAdmin.patient.tests'); 

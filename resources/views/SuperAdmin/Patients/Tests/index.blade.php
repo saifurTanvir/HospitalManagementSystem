@@ -23,7 +23,7 @@
                 <td>{{$test->testCode}}</td>
             </tr>
         @endforeach
-
+        <tr><td>{{ $tests->links() }}</td></tr>
 
         </tbody>
     </table>

@@ -59,6 +59,9 @@ Route::get('/superAdmin/patient/tests/{patientId}', 'PatientTestController@index
 
 Route::get('/superAdmin/hospitalTests', 'HospitalTestController@index')
     ->name('superAdmin.HospitalTests');
-Route::get('/superAdmin/hospitalTests/test/{testId}', 'HospitalTestController@edit')
+Route::get('/superAdmin/hospitalTests/test/edit/{testId}', 'HospitalTestController@edit')
     ->name('superAdmin.hospitalTest.edit');
-Route::patch('/superAdmin/hospitalTests/test/{testId}', 'HospitalTestController@update');
+Route::patch('/superAdmin/hospitalTests/test/edit/{testId}', 'HospitalTestController@update');
+Route::get('/superAdmin/hospitalTests/test/delete/{testId}', 'HospitalTestController@delete')
+    ->name('superAdmin.hospitalTests.delete');
+Route::delete('/superAdmin/hospitalTests/test/delete/{testId}', 'HospitalTestController@destroy');

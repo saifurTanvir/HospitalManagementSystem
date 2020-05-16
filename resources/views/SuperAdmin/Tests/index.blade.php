@@ -3,6 +3,7 @@
 @section('content')
     <div class="alert alert-success" role="alert">
         {{session('testUpdate')}}
+        {{session('testDelete')}}
     </div>
     <table class="table table-striped">
         <h1>Total Tests <span class="badge badge-info">{{count($tests)}}</span></h1>
@@ -27,8 +28,8 @@
                     <td>{{$test->addingDate}}</td>
                     <td>{{$test->testCost}}</td>
                     <td style="text-align: center;">
-                        <a href="{{route('superAdmin.hospitalTest.edit', $test->Id)}}" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-primary">Temp Delete</a>
+                        <a href="{{route('superAdmin.hospitalTest.edit', $test->id)}}" class="btn btn-primary">Edit</a>
+                        <a href="{{route('superAdmin.hospitalTests.delete', $test->id)}}" class="btn btn-primary">Delete</a>
                     </td>
 
                 </tr>

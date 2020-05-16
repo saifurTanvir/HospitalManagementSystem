@@ -12,7 +12,7 @@ class HospitalTestController extends Controller
         return view('SuperAdmin.Tests.index', compact('tests'));
     }
     public function edit($testId){
-        $test = HospitalTest::where('Id', $testId)->first();
+        $test = HospitalTest::where('id', $testId)->first();
         return view('SuperAdmin.Tests.edit', compact('test'));
     }
     public function update($testId){
@@ -20,14 +20,25 @@ class HospitalTestController extends Controller
             'cost' => 'required|numeric'
         ]);
 
-        $test = HospitalTest::where('Id', $testId)->first();
+        $test = HospitalTest::where('id', $testId)->first();
         $test->testCost = request()->cost;
         $test->save();
-        //dd($test->testCost);
-
         request()->session()->flash('testUpdate','Update Success!');
         
         return redirect()->route('superAdmin.HospitalTests');
 
+    }
+
+    public function delete($testId){
+        return view('SuperAdmin.Tests.delete');
+    }
+
+    public function destroy($testId){
+        $test = HospitalTest::where('id', $testId)->first();
+        $test->delete();
+
+        request()->session()->flash('testDelete','Delete Success!');
+        
+        return redirect()->route('superAdmin.HospitalTests');
     }
 }
